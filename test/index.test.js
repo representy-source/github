@@ -1,11 +1,36 @@
 import request from 'request-promise-native';
 import Github from '../src/index';
 
+const token = process.env.GITHUB_TOKEN;
+
 describe('Github', () => {
+  test('constructor', () => {
+    let user = null;
+    expect.assertions(3);
+    try {
+      user = new Github();
+      expect(user).not.toBeNull();
+    } catch (e) {
+      expect(user).toBeNull();
+      expect(e).not.toBeNull();
+      expect(e).toBeInstanceOf(Error);
+    }
+  });
+  test('isUser', () => {
+    const user = new Github({
+      user: 'user',
+    });
+    const org = new Github({
+      org: 'org',
+    });
+    expect(user.isUser()).toBe(true);
+    expect(org.isUser()).toBe(false);
+  });
   test('load', async () => {
     const github = new Github(
       {
         user: 'salimkayabasi',
+        token,
       },
       request,
     );

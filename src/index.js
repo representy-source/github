@@ -3,6 +3,9 @@ import { logoBase64, svgLogo } from './sources';
 class Github {
   constructor(options, request) {
     this.options = options || {};
+    if (!this.options.user && !this.options.org) {
+      throw new Error('options must have `user` or `org` param');
+    }
     this.request = request;
     this.options.isUser = this.isUser();
     this.options.name = this.options.isUser
@@ -26,13 +29,18 @@ class Github {
   }
 
   async getUserProfile() {
-    const url = `https://api.github.com/users/${this.options.name}`;
+    const options = this.options;
+    const url = `https://api.github.com/users/${options.name}`;
+    const headers = {
+      'User-Agent': 'representation-source-github',
+    };
+    if (options.token && options.token.length) {
+      headers.Authorization = `token ${options.token}`;
+    }
     return this.request({
       url,
       json: true,
-      headers: {
-        'User-Agent': 'representation-source-github',
-      },
+      headers,
     });
   }
 
