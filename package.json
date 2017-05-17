@@ -4,6 +4,7 @@
   "repository": "git@github.com:salimkayabasi/representation-source-github.git",
   "author": "Salim KAYABAŞI <salim.kayabasi@gmail.com>",
   "license": "MIT",
+  "main": "dist/index.js",
   "scripts": {
     "major": "npm version major -m \"New major version %s\"",
     "minor": "npm version minor -m \"New minor version %s\"",
@@ -11,7 +12,12 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "pretest": "yarn run lint",
-    "test": "jest"
+    "test": "jest",
+    "build": "babel src/ -d dist/",
+    "is-dirty": "exit $(git status --porcelain | wc -l) ",
+    "predist": "yarn is-dirty && yarn build",
+    "dist": "git add .  && git commit -m 'update dist'",
+    "preversion": "yarn dist"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
