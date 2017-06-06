@@ -14,10 +14,7 @@
     "pretest": "yarn run lint",
     "test": "jest",
     "build": "babel src/ -d dist/",
-    "is-dirty": "exit $(git status --porcelain | wc -l) ",
-    "predist": "yarn is-dirty && yarn build",
-    "commit": "git commit -a --allow-empty -m 'update dist'",
-    "preversion": "yarn commit"
+    "preversion": "yarn build && git commit -a --allow-empty -m 'update dist'"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",

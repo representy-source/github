@@ -22,7 +22,7 @@ class Github {
   getBase() {
     return {
       name: 'Github',
-      home: `'https://github.com/'${this.options.name}`,
+      home: `https://github.com/${this.options.name}`,
       logo: {
         svg: _sources.svgLogo,
         base64: _sources.logoBase64
