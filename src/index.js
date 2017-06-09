@@ -67,3 +67,4 @@ class Github {
 }
 
 export default Github;
+export { Github as Source };
