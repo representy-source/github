@@ -41,6 +41,7 @@
       "!**/node_modules/**",
       "!**/coverage/**",
       "!**/build/**",
+      "!**/dist/**",
       "!**/config/**",
       "!**/test/**"
     ],
