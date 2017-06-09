@@ -70,6 +70,7 @@ class Github {
         title: 'followers',
         count: profile.followers
       }];
+      result.profile = profile;
       return result;
     })();
   }
