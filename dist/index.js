@@ -5,17 +5,26 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Source = undefined;
 
+var _lodash = require('lodash');
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _requestPromiseNative = require('request-promise-native');
+
+var _requestPromiseNative2 = _interopRequireDefault(_requestPromiseNative);
+
 var _sources = require('./sources');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 class Github {
-  constructor(options, request) {
+  constructor(options) {
     this.options = options || {};
-    if (!this.options.user && !this.options.org) {
+    if (!_lodash2.default.get(this.options, 'user') && !_lodash2.default.get(this.options, 'org')) {
       throw new Error('options must have `user` or `org` param');
     }
-    this.request = request;
     this.options.isUser = this.isUser();
     this.options.name = this.options.isUser ? this.options.user : this.options.org;
   }
@@ -47,7 +56,7 @@ class Github {
       if (options.token && options.token.length) {
         headers.Authorization = `token ${options.token}`;
       }
-      return _this.request({
+      return (0, _requestPromiseNative2.default)({
         url,
         json: true,
         headers
