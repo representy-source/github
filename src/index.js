@@ -1,12 +1,13 @@
+import _ from 'lodash';
+import request from 'request-promise-native';
 import { logoBase64, svgLogo } from './sources';
 
 class Github {
-  constructor(options, request) {
+  constructor(options) {
     this.options = options || {};
-    if (!this.options.user && !this.options.org) {
+    if (!_.get(this.options, 'user') && !_.get(this.options, 'org')) {
       throw new Error('options must have `user` or `org` param');
     }
-    this.request = request;
     this.options.isUser = this.isUser();
     this.options.name = this.options.isUser
       ? this.options.user
@@ -37,7 +38,7 @@ class Github {
     if (options.token && options.token.length) {
       headers.Authorization = `token ${options.token}`;
     }
-    return this.request({
+    return request({
       url,
       json: true,
       headers,

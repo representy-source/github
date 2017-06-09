@@ -1,4 +1,3 @@
-import request from 'request-promise-native';
 import Github from '../src/index';
 
 const token = process.env.GITHUB_TOKEN;
@@ -31,9 +30,7 @@ describe('Github', () => {
       {
         user: 'salimkayabasi',
         token,
-      },
-      request,
-    );
+      });
     const result = await github.load();
     expect(result).not.toBeNull();
     expect(result).toHaveProperty('name');
