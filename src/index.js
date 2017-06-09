@@ -61,6 +61,7 @@ class Github {
         count: profile.followers,
       },
     ];
+    result.profile = profile;
     return result;
   }
 }
