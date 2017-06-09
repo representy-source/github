@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.Source = undefined;
 
 var _sources = require('./sources');
 
@@ -77,3 +78,4 @@ class Github {
 }
 
 exports.default = Github;
+exports.Source = Github;
