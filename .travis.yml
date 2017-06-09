@@ -3,9 +3,3 @@ node_js:
   - "stable"
 cache:
   yarn: true
-deploy:
-  provider: npm
-  api_key: "NPM_TOKEN"
-  on:
-    tags: true
-    node: stable
