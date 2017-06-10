@@ -1,6 +1,6 @@
 {
   "name": "representation-source-github",
-  "version": "0.0.9",
+  "version": "0.0.14",
   "repository": "git@github.com:salimkayabasi/representation-source-github.git",
   "author": "Salim KAYABAŞI <salim.kayabasi@gmail.com>",
   "license": "MIT",
@@ -14,7 +14,7 @@
     "pretest": "yarn run lint",
     "test": "jest",
     "build": "babel src/ -d dist/",
-    "preversion": "yarn build && git commit -a --allow-empty -m 'update dist'"
+    "preversion": "yarn build && git commit -a --allow-empty -m \"update dist\""
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
