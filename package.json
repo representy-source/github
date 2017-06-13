@@ -1,6 +1,6 @@
 {
-  "name": "@representy-source/github",
-  "version": "0.0.19",
+  "name": "representy-source-github",
+  "version": "0.0.20",
   "repository": "git@github.com:representy-source/github.git",
   "author": "Salim KAYABAŞI <salim.kayabasi@gmail.com>",
   "license": "MIT",
