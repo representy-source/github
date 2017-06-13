@@ -1,7 +1,7 @@
 {
-  "name": "representation-source-github",
-  "version": "0.0.16",
-  "repository": "git@github.com:salimkayabasi/representation-source-github.git",
+  "name": "@representy-source/github",
+  "version": "0.0.19",
+  "repository": "git@github.com:representy-source/github.git",
   "author": "Salim KAYABAŞI <salim.kayabasi@gmail.com>",
   "license": "MIT",
   "main": "dist/index.js",
@@ -44,10 +44,10 @@
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 90,
-        "functions": 90,
-        "lines": 90,
-        "statements": 90
+        "branches": 0,
+        "functions": 0,
+        "lines": 0,
+        "statements": 0
       }
     }
   },
