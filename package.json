@@ -1,7 +1,7 @@
 {
-  "name": "representation-source-github",
+  "name": "representy-source-github",
   "version": "0.0.16",
-  "repository": "git@github.com:salimkayabasi/representation-source-github.git",
+  "repository": "git@github.com:salimkayabasi/representy-source-github.git",
   "author": "Salim KAYABAŞI <salim.kayabasi@gmail.com>",
   "license": "MIT",
   "main": "dist/index.js",

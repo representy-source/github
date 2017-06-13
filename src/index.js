@@ -33,7 +33,7 @@ class Github {
     const options = this.options;
     const url = `https://api.github.com/users/${options.name}`;
     const headers = {
-      'User-Agent': 'representation-source-github',
+      'User-Agent': 'representy-source-github',
     };
     if (options.token && options.token.length) {
       headers.Authorization = `token ${options.token}`;
