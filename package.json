@@ -1,7 +1,7 @@
 {
-  "name": "representation-source-github",
-  "version": "0.0.16",
-  "repository": "git@github.com:salimkayabasi/representation-source-github.git",
+  "name": "@representy-source/github",
+  "version": "0.0.19",
+  "repository": "git@github.com:representy-source/github.git",
   "author": "Salim KAYABAŞI <salim.kayabasi@gmail.com>",
   "license": "MIT",
   "main": "dist/index.js",
@@ -21,7 +21,7 @@
     "babel-eslint": "^7.2.3",
     "babel-preset-env": "^1.5.2",
     "babel-preset-stage-2": "^6.24.1",
-    "eslint": "^3.19.0",
+    "eslint": "^4.0.0",
     "eslint-config-airbnb": "^15.0.1",
     "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
@@ -44,10 +44,10 @@
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 90,
-        "functions": 90,
-        "lines": 90,
-        "statements": 90
+        "branches": 0,
+        "functions": 0,
+        "lines": 0,
+        "statements": 0
       }
     }
   },
